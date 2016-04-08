@@ -36,7 +36,7 @@ def menu():
     "[+] - Este script é baseado na documentação oficial do Zabbix - https://www.zabbix.com/documentation/3.0/manual/installation/requirements - [+]\n"
     "[+] - O objetivo é exibir o tamanho de espaço em disco que você terá que providenciar para uso do Zabbix de acordo com as respostas - [+]\n"
     "[+] - Desenvolvido por Janssen Lima - [+]\n"
-    "[+] - Dúvidas/Sugestões envie e-mal para janssen@gmail.com.br - [+]", 'blue')
+    "[+] - Dúvidas/Sugestões envie e-mal para janssen@conectsys.com.br - [+]", 'blue')
     print
     print colored("--- Escolha uma opção do menu ---",'yellow', attrs=['bold'])
     print
