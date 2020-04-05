@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-#@author: Janssen
+# @author: Janssen
 
 import os, sys
 from termcolor import colored
