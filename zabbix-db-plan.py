@@ -5,6 +5,7 @@
 import os, sys
 from termcolor import colored
 
+
 def banner():
     print(colored('''
                        _____       _      _      _
@@ -26,6 +27,7 @@ def banner():
     ''', 'red', attrs=['bold']))
     print
 
+
 def menu():
     os.system('clear')
     banner()
@@ -34,14 +36,12 @@ def menu():
     "[+] - O objetivo é exibir o tamanho de espaço em disco que você terá que providenciar para uso do Zabbix de acordo com as respostas - [+]\n"
     "[+] - Desenvolvido por Janssen Lima - [+]\n"
     "[+] - Dúvidas/Sugestões envie e-mal para janssenreislima@gmail.com - [+]", 'blue'))
-    print
+    print()
     print(colored("--- Escolha uma opção do menu ---",'yellow', attrs=['bold']))
-    print
     print("[1] - Executar")
-    print
     print("[0] - Sair")
-    print
     menu_opcao()
+
 
 def menu_opcao():
     opcao = input("[+] - Selecione uma opção: ")
@@ -52,10 +52,10 @@ def menu_opcao():
     else:
         menu()
 
+
 def execucao():
-    print
+    print()
     print(colored('''Entre com os dados:''', 'red', attrs=['bold']))
-    print
     itens = input("Quantidade de itens que serão monitorados: ")
     intervalo = input("Intervalo de atualização que será utilizado (média. ex.: 60 segundos): ")
     dias_historicos = input("Número de dias de retenção dos dados históricos: ")
@@ -66,7 +66,7 @@ def execucao():
 
     bytes_h = 90
     bytes_t = 90
-    bytes_e = 170
+    bytes_e = 500
     historico = (int(dias_historicos) * (24 * 3600 * vps * int(bytes_h))) / 1024 / 1024 / 1024
     estatistica = ((int(itens) / 3600) * (24 * 3600 * int(dias_estatisticas)) * bytes_t) / 1024 / 1024 / 1024
     eventos = (int(dias_eventos) * float(quantidade_eventos) * 24 * 3600 * int(bytes_e)) / 1024 / 1024 / 1024
@@ -74,13 +74,12 @@ def execucao():
     total = (historico + estatistica + eventos)
 
     print("Total de espaço em disco necessário para armazenar os dados na base é:", colored(format(total, '.2f'), 'red', attrs=['bold']), "GB")
-    print("A performance requerida do teu servidor será de:", colored(vps, 'red', attrs=['bold']), "vps")
+    print("A performance requerida do teu servidor será de:", colored(format(vps, '.2f'), 'red', attrs=['bold']), "vps")
 
-    print
+    print()
     input("Pressione ENTER para continuar")
-    main()
-
-def main():
     menu()
 
-main()
+
+if __name__ == '__main__':
+    menu()
